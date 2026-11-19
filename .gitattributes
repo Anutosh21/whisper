@@ -1,0 +1,2 @@
+# Unified diff context includes whitespace-only lines.
+vendor/transformers-wasm.patch whitespace=-blank-at-eol,-blank-at-eof

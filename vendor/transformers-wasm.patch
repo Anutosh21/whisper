@@ -1,0 +1,47 @@
+--- a/transformers/configuration_utils.py
++++ b/transformers/configuration_utils.py
+@@ -24,7 +24,6 @@
+ 
+ from . import __version__
+ from .dynamic_module_utils import custom_object_save
+-from .modeling_gguf_pytorch_utils import load_gguf_checkpoint
+ from .utils import (
+     CONFIG_NAME,
+     PushToHubMixin,
+@@ -750,6 +749,7 @@
+ 
+         try:
+             if gguf_file:
++                from .modeling_gguf_pytorch_utils import load_gguf_checkpoint
+                 config_dict = load_gguf_checkpoint(resolved_config_file, return_tensors=False)["config"]
+             else:
+                 # Load config dict
+--- a/transformers/models/auto/tokenization_auto.py
++++ b/transformers/models/auto/tokenization_auto.py
+@@ -25,7 +25,6 @@
+ 
+ from ...configuration_utils import PretrainedConfig
+ from ...dynamic_module_utils import get_class_from_dynamic_module, resolve_trust_remote_code
+-from ...modeling_gguf_pytorch_utils import load_gguf_checkpoint
+ from ...tokenization_utils import PreTrainedTokenizer
+ from ...tokenization_utils_base import TOKENIZER_CONFIG_FILE
+ from ...utils import (
+@@ -1103,6 +1102,7 @@
+             if not isinstance(config, PretrainedConfig):
+                 if gguf_file:
+                     gguf_path = cached_file(pretrained_model_name_or_path, gguf_file, **kwargs)
++                    from ...modeling_gguf_pytorch_utils import load_gguf_checkpoint
+                     config_dict = load_gguf_checkpoint(gguf_path, return_tensors=False)["config"]
+                     config = AutoConfig.for_model(**config_dict)
+                 else:
+--- a/transformers/tokenization_utils.py
++++ b/transformers/tokenization_utils.py
+@@ -436,7 +436,7 @@
+         # 4. If some of the special tokens are not part of the vocab, we add them, at the end.
+         # the order of addition is the same as self.SPECIAL_TOKENS_ATTRIBUTES following `tokenizers`
+         self._add_tokens(
+-            [token for token in self.all_special_tokens_extended if token not in self._added_tokens_encoder],
++            [token for token in self.all_special_tokens_extended if str(token) not in self._added_tokens_encoder],
+             special_tokens=True,
+         )
+ 
