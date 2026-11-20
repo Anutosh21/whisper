@@ -18,5 +18,10 @@
     "speech_pipeline.py": "d88538b732ceac672ec2a9b807cc04fc41653dabaa8034d5d79ef846a0862de0",
     "speech_panel.py": "adf7ea8b464dc5b3d1892828f3a597a32eff0dd4494998d91088f6089bb319bc",
     "speech_panel.html": "0a58fc8e325c1159ba1febed059f0a4a50c31f4630c19d340e20675ebd76baef"
+  },
+  "runtime_download": {
+    "url": "https://huggingface.co/openai/whisper-base/resolve/e37978b90ca9030d5170a5c07aadb050351a65bb/pytorch_model.bin?download=true",
+    "sha256": "c37f294c9563a49217d108687fbd3cda5bdf0441a451512d87bf66343ab31a87",
+    "cache": "Browser Cache Storage; SHA-256 verified before installing into the kernel filesystem."
   }
 }

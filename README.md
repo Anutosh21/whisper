@@ -17,14 +17,18 @@ Shoutout to [OpenAI's Whisper](https://github.com/openai/whisper) and the
 for the inspiration! Built from the
 [Xeus-Lite template](https://github.com/jupyterlite/xeus-lite-demo).
 
-We're using the original Whisper base checkpoint in FP32. GitHub Actions downloads
-its pinned revision and checks its SHA-256 hash when building the site. Xeus
-preloads it at `/models/whisper-base`, alongside the Python dependencies described
-in `vendor/README.md`. Both notebooks load these local files directly. The first
-visit downloads the environment and model; audio stays in the browser.
+We're using the original Whisper base checkpoint in FP32. Model configuration,
+tokenizer files and the Python dependencies described in `vendor/README.md` are
+preloaded. The model cell downloads the pinned checkpoint (about 277 MiB), checks
+its SHA-256 hash and saves it in the browser cache. Later runs reuse that copy
+while storage remains available. Clearing site data, private browsing or browser
+eviction can require another download. Audio stays in the browser.
 
 The sample is an excerpt from John F. Kennedy's inaugural address, a US federal
 government work, distributed with Whisper's tests. Model, code and dependency
 licensing details are in `content/sources.json` and the included license files.
 
 To deploy, set **Settings → Pages → Source → GitHub Actions**, then push to `main`.
+
+The browser bundle omits development headers, static libraries and package tests.
+Both notebooks use Turbine/IREE for compilation and execution on their selected device.

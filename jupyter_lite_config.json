@@ -5,6 +5,7 @@
     "mounts": [
       "_build/dependencies/lib/python3.14/site-packages:/lib/python3.14/site-packages",
       "_build/model:/models/whisper-base"
-    ]
+    ],
+    "empack_config": "empack_config.yaml"
   }
 }

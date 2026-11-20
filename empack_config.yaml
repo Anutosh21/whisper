@@ -1,0 +1,45 @@
+# Empack defaults, keeping Setuptools available for PyTorch.
+packages:
+  setuptools:
+    exclude_patterns:
+      - pattern: '**/pkg_resources/_vendor/**'
+  zlib:
+    exclude_patterns:
+      - pattern: '**/so'
+  widgetsnbextension:
+    exclude_patterns:
+      - pattern: '**'
+  numpy:
+    exclude_patterns:
+    - pattern: '**/*.pyx'
+    - pattern: '**/*.pyc'
+    - pattern: '**/*.typed'
+    - pattern: '**/*.egg-info'
+    - regex: '.*\.a$'
+    - regex: '(^|.*/)(include|cmake|pkgconfig)(/|$)'
+    - pattern: 'etc/conda/test-files/**'
+default:
+  exclude_patterns:
+    - pattern: 'bin/**'
+    - pattern: '**/bin/**'
+    - pattern: 'tests/**'
+    - pattern: '**/tests/**'
+    - pattern: '**/*.ini'
+    - pattern: '**/*.exe'
+    - pattern: '**/*.c'
+    - pattern: '**/*.pxd'
+    - pattern: '**/*.pyx'
+    - pattern: '**/*.pyc'
+    - pattern: '**/*.typed'
+    - pattern: '**/*.egg-info'
+    - pattern: '**/site-packages/pip/_vendor/**'
+    - pattern: '**/idlelib/**'
+    - pattern: '**/ensurepip/**'
+    - pattern: 'Scripts/*'
+    # Excluding jupyter front-end and server extensions
+    - pattern: 'share/jupyter/nbextensions/**'
+    - pattern: 'share/jupyter/labextensions/**'
+    - pattern: 'etc/jupyter/nbconfig/**'
+    - regex: '.*\.a$'
+    - regex: '(^|.*/)(include|cmake|pkgconfig)(/|$)'
+    - pattern: 'etc/conda/test-files/**'
