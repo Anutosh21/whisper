@@ -1,0 +1,135 @@
+{
+  "recorded_date": "2026-11-23",
+  "model": "openai/whisper-base",
+  "precision": "FP32",
+  "browser": "157.0.8103.80",
+  "machine": {
+    "cpu": "Apple M5",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "framework_versions": {
+    "pytorch": "2.15.0a0 build 1",
+    "iree-base-compiler": "20261115",
+    "iree-base-runtime": "20261115",
+    "iree-turbine": "3.10.0 build 2"
+  },
+  "checkpoint_sha256": "c37f294c9563a49217d108687fbd3cda5bdf0441a451512d87bf66343ab31a87",
+  "delivery": "Exact published environment, locally built JupyterLite. Real pinned checkpoint download; later loads tested with its network URL blocked. Saved audio/transcripts use jfk.wav; microphone is never started.",
+  "compiled_transcription": {
+    "cpu": {
+      "audio_seconds": 11,
+      "compile_and_first_transcription_seconds": 22.1582,
+      "device": "cpu",
+      "device_setup_seconds": 4.057400000000001,
+      "eager_cpu_reference_seconds": 7.3385,
+      "max_abs_error": {
+        "encoder": 0.0050945281982421875,
+        "first_logits": 0.0000362396240234375
+      },
+      "model": "openai/whisper-base",
+      "passed": true,
+      "precision": "FP32",
+      "pytorch": "2.15.0a0",
+      "real_time_factor": 0.5263090909090903,
+      "timings": {
+        "decoder_ms": 1018.9999999999912,
+        "encoder_ms": 4753.300000000003,
+        "features_ms": 10.599999999996612
+      },
+      "token_ids": [
+        400,
+        370,
+        452,
+        7177,
+        6280,
+        11,
+        1029,
+        406,
+        437,
+        428,
+        1941,
+        393,
+        360,
+        337,
+        291,
+        11,
+        1029,
+        437,
+        291,
+        393,
+        360,
+        337,
+        428,
+        1941,
+        13
+      ],
+      "transcript": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "transcription_samples_seconds": [
+        5.7686999999999955,
+        5.789399999999993,
+        5.935999999999993
+      ],
+      "transcription_seconds": 5.789399999999993,
+      "weights_and_model_load_seconds": 0.6742999999999988
+    },
+    "webgpu": {
+      "audio_seconds": 11,
+      "compile_and_first_transcription_seconds": 17.064899999999998,
+      "device": "webgpu",
+      "device_setup_seconds": 4.4541,
+      "eager_cpu_reference_seconds": 7.331700000000001,
+      "max_abs_error": {
+        "encoder": 0.0045013427734375,
+        "first_logits": 0.0000362396240234375
+      },
+      "model": "openai/whisper-base",
+      "passed": true,
+      "precision": "FP32",
+      "pytorch": "2.15.0a0",
+      "real_time_factor": 0.059518181818181665,
+      "timings": {
+        "decoder_ms": 400.0999999999948,
+        "encoder_ms": 230.80000000000211,
+        "features_ms": 16.59999999999684
+      },
+      "token_ids": [
+        400,
+        370,
+        452,
+        7177,
+        6280,
+        11,
+        1029,
+        406,
+        437,
+        428,
+        1941,
+        393,
+        360,
+        337,
+        291,
+        11,
+        1029,
+        437,
+        291,
+        393,
+        360,
+        337,
+        428,
+        1941,
+        13
+      ],
+      "transcript": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "transcription_samples_seconds": [
+        0.6640000000000015,
+        0.6546999999999983,
+        0.6135000000000019
+      ],
+      "transcription_seconds": 0.6546999999999983,
+      "weights_and_model_load_seconds": 0.6623999999999999
+    }
+  },
+  "transcription_speedup": 8.842828776538886,
+  "weights_network_requests": 1
+}
