@@ -13,3 +13,5 @@ dependencies:
   - iree-base-compiler=20261115
   - iree-base-runtime=20261115
   - iree-turbine=3.10.0=*_2
+  - scikit-learn
+  - tabicl
